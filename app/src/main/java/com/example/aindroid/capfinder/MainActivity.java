@@ -1,4 +1,4 @@
-package com.example.aindroid.nattybohcapfinder;
+package com.example.aindroid.capfinder;
 
 import android.os.Bundle;
 import android.util.Log;

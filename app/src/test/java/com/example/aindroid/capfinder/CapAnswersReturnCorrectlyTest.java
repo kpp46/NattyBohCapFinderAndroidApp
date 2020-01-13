@@ -1,28 +1,13 @@
-package com.example.aindroid.nattybohcapfinder;
-
-import android.content.Context;
-import android.content.res.AssetManager;
+package com.example.aindroid.capfinder;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.doReturn;
 
 public class CapAnswersReturnCorrectlyTest {
 

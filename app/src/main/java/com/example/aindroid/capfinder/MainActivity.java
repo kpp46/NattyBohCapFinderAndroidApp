@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         captionAnswerText = findViewById(R.id.text_answerHelp);
 
         //innitaly set answer text
-        answerText.setText("Cap Number Finder!");
+        answerText.setText("Cap Answer Finder!");
 
         mButton.setOnClickListener(
                 new View.OnClickListener() {

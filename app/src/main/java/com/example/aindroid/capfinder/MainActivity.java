@@ -1,6 +1,7 @@
 package com.example.aindroid.capfinder;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static final Map<String, String> map = new HashMap<String, String>();  // it should be static - whereever you define
+    private static final boolean DEVELOPER_MODE = true;
     Button mButton;
     EditText mEdit;
     TextView answerText;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

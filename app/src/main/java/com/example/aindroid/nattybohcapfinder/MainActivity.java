@@ -34,17 +34,35 @@ public class MainActivity extends AppCompatActivity {
         mButton = findViewById(R.id.button_submit);
         mEdit = findViewById(R.id.text_capNumber);
         answerText = findViewById(R.id.test_capAnswer);
-        captionAnswerText = findViewById(R.id.text_yourAnswerIs);
+        captionAnswerText = findViewById(R.id.text_answerHelp);
+
+        //innitaly set answer text
+        answerText.setText("Cap Number Finder!");
 
         mButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.v("edit text: ", mEdit.getText().toString());
-                        String answer = getAnswerForCapNumberFromHashmap(mEdit.getText().toString());
-                        Log.v("your answer is ", answer);
-                        captionAnswerText.setText("the answer to cap " + mEdit.getText().toString() + " is:");
-                        answerText.setText(answer);
+                        String capNumberEntry = mEdit.getText().toString();
+                        Log.v("entry text: ", capNumberEntry);
+                        String answer = getAnswerForCapNumberFromHashmap(capNumberEntry);
+                        if (answer == null) {
+                            Log.v("get answer", "returned null");
+                            if (capNumberEntry.isEmpty()) {
+                                captionAnswerText.setText("Please enter a number below");
+
+                            } else {
+                                captionAnswerText.setText("No cap answer for " + capNumberEntry + " can be found, please try again");
+                            }
+                            answerText.setText("");
+
+                        } else {
+                            Log.v("your answer is ", answer);
+                            captionAnswerText.setText("Cap " + capNumberEntry + ":");
+                            answerText.setText(answer);
+                        }
+
+
                     }
                 }
         );
@@ -53,12 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void CapAnswersHashmap() {
-        Log.v("capanswershashmap", "i got here");
-
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new InputStreamReader(getAssets().open("NattyBohAnswers.txt")));
-
 
             String line;
             while ((line = reader.readLine()) != null) {

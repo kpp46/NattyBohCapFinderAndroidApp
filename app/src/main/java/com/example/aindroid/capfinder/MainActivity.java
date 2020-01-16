@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                 captionAnswerText.setText("Please enter a number below");
 
                             } else {
-                                captionAnswerText.setText("No cap answer for " + capNumberEntry + " can be found, please try again");
+                                captionAnswerText.setText("No answer for " + capNumberEntry + " can be found\nplease try again");
                             }
                             answerText.setText("");
 
